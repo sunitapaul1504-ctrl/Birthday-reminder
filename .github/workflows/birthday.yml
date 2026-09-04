@@ -12,8 +12,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Run Birthday Reminder
-        shell: powershell
+        shell: cmd
         run: |
-          .\birthday-reminder.ps1
+          powershell.exe -ExecutionPolicy Bypass -File birthday-reminder.ps1
