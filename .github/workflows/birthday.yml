@@ -2,6 +2,7 @@ name: Daily Birthday Reminder
 
 on:
   schedule:
+    # 09:00 AM IST = 03:30 UTC
     - cron: "30 3 * * *"
   workflow_dispatch:
 
@@ -13,14 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install BurntToast
-        shell: powershell
-        run: |
-          Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
-          Install-Module -Name BurntToast -Force -Scope CurrentUser -AllowClobber
-
       - name: Run Birthday Reminder
-        shell: powershell
+        shell: cmd
+        env:
+          NTFY_TOPIC: tpGme3XOxG2iZ6Dd
         run: |
-          Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
-          powershell.exe -ExecutionPolicy Bypass -File birthday-reminder.ps1
+          powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%GITHUB_WORKSPACE%\birthday-reminder.ps1"
