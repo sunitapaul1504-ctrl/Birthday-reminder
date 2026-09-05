@@ -1,3 +1,4 @@
+```powershell
 $ErrorActionPreference = "Stop"
 
 # ==============================
@@ -9,7 +10,7 @@ $NtfyUrl = "https://ntfy.sh/$NtfyTopic"
 # ==============================
 # CSV FILE
 # ==============================
-$CsvPath = Join-Path $PSScriptRoot "friends_birthdays_dummy_full_year.csv"
+$CsvPath = Join-Path $PSScriptRoot "Birthday.csv"
 
 if (-not (Test-Path $CsvPath)) {
     Write-Host "ERROR: CSV file not found:"
@@ -163,3 +164,4 @@ Write-Host ""
 Write-Host "======================================"
 Write-Host "ntfy notification sent successfully."
 Write-Host "======================================"
+```
