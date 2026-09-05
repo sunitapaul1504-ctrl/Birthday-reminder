@@ -1,4 +1,3 @@
-```powershell
 $ErrorActionPreference = "Stop"
 
 # ==============================
@@ -87,7 +86,7 @@ Write-Host "TODAY'S BIRTHDAY:"
 if ($TodayBirthdays.Count -gt 0) {
 
     foreach ($Name in $TodayBirthdays) {
-        Write-Host "🎂 $Name"
+        Write-Host "Birthday: $Name"
     }
 
 }
@@ -105,7 +104,7 @@ Write-Host "TOMORROW'S BIRTHDAY:"
 if ($TomorrowBirthdays.Count -gt 0) {
 
     foreach ($Name in $TomorrowBirthdays) {
-        Write-Host "🎁 $Name"
+        Write-Host "Tomorrow: $Name"
     }
 
 }
@@ -124,7 +123,7 @@ $Message += "TODAY - $TodayKey`n"
 if ($TodayBirthdays.Count -gt 0) {
 
     foreach ($Name in $TodayBirthdays) {
-        $Message += "🎂 $Name's Birthday Today!`n"
+        $Message += "$Name's Birthday Today!`n"
     }
 
 }
@@ -137,7 +136,7 @@ $Message += "`nTOMORROW - $TomorrowKey`n"
 if ($TomorrowBirthdays.Count -gt 0) {
 
     foreach ($Name in $TomorrowBirthdays) {
-        $Message += "🎁 $Name's Birthday Tomorrow!`n"
+        $Message += "$Name's Birthday Tomorrow!`n"
     }
 
 }
@@ -164,4 +163,3 @@ Write-Host ""
 Write-Host "======================================"
 Write-Host "ntfy notification sent successfully."
 Write-Host "======================================"
-```
