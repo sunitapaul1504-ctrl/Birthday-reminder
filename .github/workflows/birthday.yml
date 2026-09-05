@@ -6,14 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  birthday:
+  birthday-check:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install BurntToast
+        shell: powershell
+        run: |
+          Install-Module -Name BurntToast -Force -Scope CurrentUser -AllowClobber
+
       - name: Run Birthday Reminder
-        shell: cmd
+        shell: powershell
         run: |
           powershell.exe -ExecutionPolicy Bypass -File birthday-reminder.ps1
