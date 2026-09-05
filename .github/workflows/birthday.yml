@@ -16,9 +16,11 @@ jobs:
       - name: Install BurntToast
         shell: powershell
         run: |
+          Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
           Install-Module -Name BurntToast -Force -Scope CurrentUser -AllowClobber
 
       - name: Run Birthday Reminder
         shell: powershell
         run: |
+          Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
           powershell.exe -ExecutionPolicy Bypass -File birthday-reminder.ps1
