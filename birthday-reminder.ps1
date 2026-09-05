@@ -10,7 +10,7 @@ $NtfyUrl = "https://ntfy.sh/$NtfyTopic"
 # ==============================
 # CSV FILE
 # ==============================
-$CsvPath = Join-Path $PSScriptRoot "Birthday.csv"
+$CsvPath = Join-Path $PSScriptRoot "birthdays.csv"
 
 if (-not (Test-Path $CsvPath)) {
     Write-Host "ERROR: CSV file not found:"
